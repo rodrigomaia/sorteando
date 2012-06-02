@@ -1,0 +1,10 @@
+<%= form_for(@sorteio) do |f| %> 
+  <%= f.label :nome, "Nome" %>
+  <%= f.text_field :nome %>
+  <br/>
+  <%= f.label :qtd_premios, "Qtd de Premios" %>
+  <%= f.text_field :qtd_premios %>
+  <div class="actions">
+    <%= f.submit text_button %>
+  </div>
+<% end %>

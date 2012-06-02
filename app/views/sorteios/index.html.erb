@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<h1>Sorteios</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sorteios.each do |sorteio| %>
+  <tr>
+	<td><%= sorteio.nome %></td>
+    <td><%= link_to '☉', sorteio %></td>
+    <td><%= link_to '✎', edit_sorteio_path(sorteio) %></td>
+    <td><%= link_to '✄', sorteio, :action => :destroy, :confirm => 'Tem certeza?', :method => :delete %></td>
+	
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '+', new_sorteio_path %>

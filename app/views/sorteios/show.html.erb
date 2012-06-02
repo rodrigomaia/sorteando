@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+<%= @sorteio.nome %>
+</h2>
+<% if not sorteio_encerrado?(@sorteio) %>
+<%= link_to '⌘ Sortear', sortear_sorteio_path(@sorteio) %>
+	<br/><br/>
+<% end %>
+
+Concorrentes:
+<br/>
+<% @sorteio.concorrentes.each do |c| %>
+	<%= c.nome %>
+	<% if not sorteio_encerrado?(@sorteio) %>
+		<%= link_to '✄', sorteio_concorrente_path(@sorteio, c), confirm: 'Tem certeza?', :method => :delete %>
+	<% end %>
+	<br/>
+<% end %>
+
+<% if not sorteio_encerrado?(@sorteio) %>
+	<%= link_to '+', new_sorteio_concorrente_path(@sorteio) %>
+	<br/>
+<% end %>
+<br/>
+
+<% if sorteio_encerrado?(@sorteio) %>
+	Vencedores:
+	<br/>
+	<% @sorteio.vencedores.each do |v| %>
+		<%= v.nome %>
+		<br/>
+	<% end %>
+	<br/>
+<% end %>
+
+<%= link_to '✎', edit_sorteio_path(@sorteio) %> |
+<%= link_to '⇤', sorteios_path %>

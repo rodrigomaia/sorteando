@@ -1,0 +1,14 @@
+<h1>Novo Concorrente</h1>
+
+<%= form_for(@concorrente, :url => {:action => :create, :controller => :concorrentes, :sorteio_id => @concorrente.sorteio.id}) do |f| %>
+
+  <%= f.label :nome, "Nome" %>
+  <%= f.text_field :nome %>
+  <%= f.hidden_field :sorteio_id %>
+
+  <div class="actions">
+    <%= f.submit "Novo" %>
+  </div>
+<% end %>
+
+<%= link_to '⇤', sorteio_path(@concorrente.sorteio_id) %>
