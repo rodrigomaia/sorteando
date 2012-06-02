@@ -3,5 +3,10 @@ rvm:
   - 1.9.2
 before_script:
   - "rake db:migrate"
-  - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+branches:
+  only:
+    - "master"
+notifications:
+  email:
+    - "rodrigomb@gmail.com"
