@@ -11,14 +11,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-# To use debugger
-gem 'ruby-debug19', :require => 'ruby-debug'
+unless ENV["CI"]
+  # To use debugger
+  gem 'ruby-debug19', :require => 'ruby-debug'
+end
 
 group :test, :development  do
   gem 'turn', '0.8.2', :require => false
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'shoulda'  
+  gem 'shoulda'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'simplecov'
