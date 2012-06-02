@@ -29,4 +29,6 @@ group :test, :development  do
   gem 'capybara-webkit'
   gem 'headless'
   gem 'database_cleaner'
+  
+  gem "rails-erd"
 end
