@@ -21,12 +21,8 @@ group :test, :development  do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda'
-  
-  unless ENV["CI"]
-    gem 'cucumber'
-    gem 'cucumber-rails'
-  end
-  
+  gem 'cucumber'
+  gem 'cucumber-rails'
   gem 'simplecov'
   gem 'factory_girl'
   gem 'capybara'
