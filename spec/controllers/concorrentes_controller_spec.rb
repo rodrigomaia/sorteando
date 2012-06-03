@@ -42,8 +42,6 @@ describe ConcorrentesController do
     end
     
     it "salva um concorrente" do
-      #Sem mock = 0.07932s
-      #Com mock = 0.03120s
       @concorrente_mock.should_receive(:save)
       post :create, :sorteio_id => 1
     end
