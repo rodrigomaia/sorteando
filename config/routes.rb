@@ -3,7 +3,7 @@ Sorteando::Application.routes.draw do
     member do
       get :sortear
     end
-    resources :concorrentes
+    resources :concorrentes, :only => [:new, :create, :destroy]
   end
   
   root :to => 'sorteios#index'
