@@ -18,10 +18,7 @@ describe Sorteio do
     it "quando sortear, gravar os vencedores" do
       concorrentes = Concorrente.where(:sorteio_id => @sorteio.id)
       @sorteio.sortear
-      
-      @sorteio.vencedores.each do |vencedor|
-        concorrentes.map(&:id).should include(vencedor.id)
-      end
+      @sorteio.vencedores.should included_in(concorrentes)
     end
     
     it "sortear somente a quantidade de prêmios" do
